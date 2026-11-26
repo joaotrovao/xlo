@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'perfil.css' %}">
+</head>
+<body>
+    <header>
+      <h1><a href="{% url 'home' %}">XLO</a></h1>
+      <div class="profile-button">
+        <div class="profile-picture-header">
+          <img src="{{user.foto}}" alt="User Photo">
+        </div>
+        <a href="{% url 'view_perfil' utilizador_username_id=user.id%}" class="username-button">{{user.username}}</a>
+        <a href="{% url 'logout' %}" class="logout-button">Logout</a>
+      </div>
+    </header>
+
+  <div class="container">
+    <div class="sidebar">
+      <ul class="navigation">
+        <li><a href="{% url 'home' %}">Ver Todos</a></li>
+        {% for categoria in categorias %}
+          <li class="dropdown">
+            <a href="{% url 'category_items' cat=categoria.cat %}">{{ categoria.cat }}</a>
+            <ul class="submenu">
+              {% for subcategoria in categoria.sub %}
+                <li><a href="{% url 'category_sub_items' cat=categoria.cat sub=subcategoria.sub %}">{{ subcategoria.sub }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="user-profile">
+      <div class="profile-picture-container">
+        <img src="{{user_perfil.foto}}" alt="Profile Picture">
+      </div>
+
+      <div class="user-details">
+        <h2>{{user_perfil.username}}</h2>
+        {% if user.id == user_perfil.id %}
+          <p>IBAN: {{user_perfil.iban}}</p>
+        {% endif %}
+        <p>Cidade: {{user_perfil.cidade}}</p>
+        <p>País: {{user_perfil.pais}}</p>
+        {% if user.id == user_perfil.id %}
+        <div class="add-item-button">
+          <a href="{% url 'add_item_view' utilizador_username_id=user.id%}" class="add-item-link">Add Item</a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    
+    <div class="main-content">
+
+      <div class="gallery">
+        {% for item in items %}
+          <div class="item">
+            <a href="{% url 'view_item' ref=item.ref %}">
+              {% if item.foto_set.exists %}
+                {% with foto=item.foto_set.first %}
+                  <img src="{{ foto.url }}" alt="{{ item.nome }}">
+                {% endwith %}
+              {% else %}
+                <img src="{% static 'no-image.svg' %}" alt="No Image">
+              {% endif %}
+              <h3>{{ item.nome }}</h3>
+              <p>{{ item.preco }}€</p>
+            </a>
+          </div>
+        {% endfor %}
+        {% if user.id == user_perfil.id %}
+          {% for item in items_sold %}
+          <div class="item_sold">
+            <a href="{% url 'view_item' ref=item.ref %}">
+              {% if item.foto_set.exists %}
+                {% with foto=item.foto_set.first %}
+                  <img src="{{ foto.url }}" alt="{{ item.nome }}">
+                {% endwith %}
+              {% else %}
+                <img src="{% static 'no-image.svg' %}" alt="No Image">
+              {% endif %}
+              <h3>{{ item.nome }}</h3>
+              <p>Vendido</p>
+            </a>
+          </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+</div>  
+</body>
+</html>

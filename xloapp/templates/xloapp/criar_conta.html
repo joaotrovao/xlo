@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Criar Conta Page</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'criar_conta.css' %}">
+</head>
+<body>
+  <div class="login-container">
+    {% block content %}
+  <h2>Criar Conta</h2>
+  <form method="post" action="{% url 'criarconta' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Criar Conta</button>
+  </form>
+  <div class="login-link">
+        <p>Já tem uma conta? <a href="{% url 'login' %}">Login</a></p>
+      </div>
+{% endblock %}
+  </div>
+</body>
+</html>

@@ -1,0 +1,148 @@
+/* Basic styling for the layout */
+
+body {
+      font-family: Arial, sans-serif; /* Use Arial font */
+    }
+
+.container {
+  display: flex;
+  flex-direction: row; /* Change to row to have the sidebar and main-content side by side */
+  justify-content: space-between;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f0f0f0; /* Add a background color to the header */
+}
+
+.title a {
+  text-decoration: none; /* Remove underline */
+  color: black; /* Set link color */
+  cursor: pointer; /* Set cursor to pointer on hover */
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.profile-picture-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: 200%;
+  height: auto;
+  }
+
+.username-button,
+.buy-button,
+.logout-button {
+  text-decoration: none;
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.sidebar {
+  width: 20%;
+}
+
+.main-content {
+  width: 75%;
+}
+
+/* Styles for the navigation */
+.navigation {
+  list-style: none;
+  padding: 0;
+}
+
+.navigation li {
+  margin-bottom: 10px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown .submenu {
+  display: none;
+}
+
+.dropdown:hover .submenu {
+  display: block;
+}
+
+/* Styles for the gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.item img {
+  max-width: 100%;
+}
+
+/* style for the image itself*/
+
+.title-section {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.images-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.image-container {
+  flex: 0 0 auto; /* Adjust the width of each image container */
+  margin: 10px; /* Adjust margin for spacing */
+}
+
+.image-container img {
+  max-width: 150px; /* Adjust the maximum width of each image */
+  height: auto;
+}
+
+.details-section {
+  margin-bottom: 20px;
+}
+
+.details-section p.vendido {
+    color: red;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color:  #555 !important;
+}

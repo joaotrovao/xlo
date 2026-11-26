@@ -1,0 +1,58 @@
+[
+  {
+    "model": "xloapp.categoria",
+    "pk": "Decoração",
+    "fields": {
+      "cat": "Casa"
+    }
+  },
+  {
+    "model": "xloapp.categoria",
+    "pk": "Mobiliário",
+    "fields": {
+      "cat": "Casa"
+    }
+  },
+  {
+    "model": "xloapp.categoria",
+    "pk": "Calças",
+    "fields": {
+      "cat": "Roupa"
+    }
+  },
+  {
+    "model": "xloapp.categoria",
+    "pk": "Sapatos",
+    "fields": {
+      "cat": "Roupa"
+    }
+  },
+  {
+    "model": "xloapp.categoria",
+    "pk": "Camisolas",
+    "fields": {
+      "cat": "Roupa"
+    }
+  },
+  {
+    "model": "xloapp.categoria",
+    "pk": "Computadores",
+    "fields": {
+      "cat": "Tecnologia"
+    }
+  },
+  {
+    "model": "xloapp.categoria",
+    "pk": "Telemóveis",
+    "fields": {
+      "cat": "Tecnologia"
+    }
+  },
+  {
+    "model": "xloapp.categoria",
+    "pk": "Televisões",
+    "fields": {
+      "cat": "Tecnologia"
+    }
+  }
+]

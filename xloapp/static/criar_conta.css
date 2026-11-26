@@ -1,0 +1,79 @@
+/* Add some spacing to form elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.login-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 25%; /* Adjust the width as needed */
+  max-width: 400px; /* Add a max-width to limit the container width */
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+/* Style form labels */
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Style form input fields */
+form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+/* Style the submit button */
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Style the link */
+p a {
+  color: #007bff;
+}
+
+form button {
+  margin: 0 auto;
+  display: block;
+}
+
+.login-link {
+  text-align: center; /* Center only the login link */
+}
+
+.login-link p a {
+  color: #007bff;
+}
