@@ -116,3 +116,7 @@ xloapp/
   tests.py        Tests
 docs/             Diagrams and screenshots used in this README
 ```
+
+## License
+
+[MIT](LICENSE) © 2024 João Trovão and Madalena Trindade
